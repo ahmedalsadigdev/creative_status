@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textsize">24sp</dimen>
+    <dimen name="textsize1">6sp</dimen>
+    <dimen name="textsize2">4sp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="dialog_color_item_size">50dp</dimen>
+
+</resources>

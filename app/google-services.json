@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1063978421614",
+    "firebase_url": "https://card-2ff8e.firebaseio.com",
+    "project_id": "card-2ff8e",
+    "storage_bucket": "card-2ff8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1063978421614:android:a96d95019cb4be1d",
+        "android_client_info": {
+          "package_name": "com.talagroups.card"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1063978421614-qlvrv12qn61mn0spbnbq41rb68hlbns0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.talagroups.card",
+            "certificate_hash": "d83274e049fe6c0ba269d64099028311a39e7e8f"
+          }
+        },
+        {
+          "client_id": "1063978421614-p8vc72d1dnqupjs0kv1sh6tasjbmncpn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUvifx8b11rGEEe3l4GQ8WxD7mNEHndqo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1063978421614-p8vc72d1dnqupjs0kv1sh6tasjbmncpn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
