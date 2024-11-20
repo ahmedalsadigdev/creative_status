@@ -1,3 +1,4 @@
+import 'package:creative_status/helper/contstants/my_colors.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/home_page.dart';
@@ -15,9 +16,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: MyColors.primary),
           useMaterial3: true,
         ),
-        home: const HomePage());
+        home: HomePage());
   }
 }
