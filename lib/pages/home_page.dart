@@ -3,11 +3,10 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 import '../helper/contstants/my_colors.dart';
+import '../widgets/status_text_widget.dart';
 
 class HomePage extends StatelessWidget {
-  final _textController = TextEditingController();
-
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,15 +43,13 @@ class HomePage extends StatelessWidget {
                 backgroundColor: Colors.white,
                 foregroundColor: MyColors.buttonColor,
                 shape: CircleBorder(),
-                onPressed: () {
-                  log(_textController.text.toString());
-                },
+                onPressed: () {},
                 child: Icon(Icons.share),
               ),
             ),
           ],
         ),
-        expandedTitleScale: 1.5,
+        expandedTitleScale: 1.3,
         background: Image.asset(
           "assets/images/bg.png",
           fit: BoxFit.cover,
@@ -64,25 +61,7 @@ class HomePage extends StatelessWidget {
   Widget buildSliverList() {
     return SliverList(
       delegate: SliverChildListDelegate(
-        [buildText()],
-      ),
-    );
-  }
-
-  Widget buildText() {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      child: TextField(
-        controller: _textController,
-        onChanged: (value) {
-          log(value);
-        },
-        keyboardType: TextInputType.multiline,
-        maxLines: null, // <-- SEE HERE
-        decoration: InputDecoration(
-            // labelText: 'What are you thinking?',
-            hintText: 'Type here...',
-            border: InputBorder.none),
+        [StatusTextWidget()],
       ),
     );
   }

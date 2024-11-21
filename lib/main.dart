@@ -1,5 +1,7 @@
+import 'package:creative_status/cubit/status_cubit.dart';
 import 'package:creative_status/helper/contstants/my_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'pages/home_page.dart';
 
@@ -13,12 +15,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: MyColors.primary),
-          useMaterial3: true,
-        ),
-        home: HomePage());
+    return BlocProvider(
+      create: (context) => StatusCubit(),
+      child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: MyColors.primary),
+            useMaterial3: true,
+          ),
+          home: HomePage()),
+    );
   }
 }
