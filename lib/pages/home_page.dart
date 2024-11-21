@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 import '../helper/contstants/my_colors.dart';
+import '../widgets/settingt_text_widget.dart';
 import '../widgets/status_text_widget.dart';
 
 class HomePage extends StatelessWidget {
