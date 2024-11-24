@@ -1,10 +1,13 @@
 import 'dart:developer';
 
+import 'package:creative_status/cubit/status_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../helper/contstants/my_colors.dart';
 import '../widgets/settingt_text_widget.dart';
 import '../widgets/status_text_widget.dart';
+import '../widgets/text_to_image_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -44,7 +47,12 @@ class HomePage extends StatelessWidget {
                 backgroundColor: Colors.white,
                 foregroundColor: MyColors.buttonColor,
                 shape: CircleBorder(),
-                onPressed: () {},
+                onPressed: () async {
+                  await showDialog(
+                      useSafeArea: true,
+                      context: context,
+                      builder: (_) => TextToImageWidget());
+                },
                 child: Icon(Icons.share),
               ),
             ),

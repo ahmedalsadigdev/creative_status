@@ -71,7 +71,7 @@ class _ColorPickerWidgetState extends State<ColorPickerWidget> {
             child: const Text('Defualt Color'),
             onPressed: () {
               widget.changeColor(widget.ButtonText == "Background Color"
-                  ? Colors.transparent
+                  ? Colors.white
                   : Colors.black87); // Call the function with Color
               Navigator.pop(context); // Close the dialog
             },

@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-
+import 'dart:ui' as ui;
+import 'package:creative_status/helper/contstants/my_colors.dart';
+import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
+import 'dart:io';
+import 'package:creative_status/cubit/status_cubit.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:share_plus/share_plus.dart';
 part 'status_state.dart';
 
 class StatusCubit extends Cubit<StatusState> {
   StatusCubit() : super(StatusInitial());
+  TextEditingController controller = TextEditingController();
 
   double fontSize = 16.0;
-  Color fillColor = Colors.transparent;
+  Color fillColor = Colors.white;
   TextAlign textAlign = TextAlign.left;
   TextDirection textDirection = TextDirection.ltr;
 

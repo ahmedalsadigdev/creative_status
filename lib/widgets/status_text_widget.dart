@@ -14,8 +14,6 @@ class StatusTextWidget extends StatefulWidget {
 }
 
 class _StatusTextWidgetState extends State<StatusTextWidget> {
-  TextEditingController _controller = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     final statusCubit = BlocProvider.of<StatusCubit>(context);
@@ -35,11 +33,9 @@ class _StatusTextWidgetState extends State<StatusTextWidget> {
     return BlocBuilder<StatusCubit, StatusState>(
       builder: (context, state) {
         return TextField(
-          controller: _controller,
+          controller: statusCubit.controller,
           style: statusCubit.currentTextStyle, // Apply dynamic text style
-          onChanged: (value) {
-            log(value);
-          },
+          onChanged: (value) {},
           autocorrect: false,
           textAlign: statusCubit.textAlign,
           keyboardType: TextInputType.multiline,
