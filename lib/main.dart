@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => StatusCubit(),
+      create: (context) => StatusCubit()..loadLoaclTextStatus(),
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(

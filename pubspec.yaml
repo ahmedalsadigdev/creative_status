@@ -43,6 +43,9 @@ dependencies:
   http: ^1.2.2
   path_provider: ^2.1.5
   share_plus: ^10.1.2
+  shared_preferences: ^2.3.3
+  fluttertoast: ^8.2.8
+  toastification: ^2.3.0
   
 flutter_native_splash:
   background_image: assets/icons/icon.png

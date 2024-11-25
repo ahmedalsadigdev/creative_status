@@ -1,2 +1,1 @@
-const String baseUrl = "";
-const String baseUrlQuote = "";
+const String SliverAppBarText = "What do you think?";

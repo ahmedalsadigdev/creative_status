@@ -1,11 +1,7 @@
-import 'dart:developer';
-
-import 'package:creative_status/cubit/status_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../helper/contstants/my_colors.dart';
-import '../widgets/settingt_text_widget.dart';
+import '../helper/contstants/string.dart';
 import '../widgets/status_text_widget.dart';
 import '../widgets/text_to_image_widget.dart';
 
@@ -37,7 +33,7 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Text("What do you think?",
+            Text(SliverAppBarText,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                     color: Colors.black54, fontWeight: FontWeight.bold)),

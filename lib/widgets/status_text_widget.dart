@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:creative_status/cubit/status_cubit.dart';
+import 'package:creative_status/helper/widgets/snackbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'settingt_text_widget.dart';
@@ -30,7 +31,12 @@ class _StatusTextWidgetState extends State<StatusTextWidget> {
   }
 
   Widget buildTextField(StatusCubit statusCubit) {
-    return BlocBuilder<StatusCubit, StatusState>(
+    return BlocConsumer<StatusCubit, StatusState>(
+      listener: (BuildContext context, StatusState state) {
+        if (state is LoadLocalStatusState) {
+          showSnackBarWidget(context: context, message: state.message);
+        }
+      },
       builder: (context, state) {
         return TextField(
           controller: statusCubit.controller,

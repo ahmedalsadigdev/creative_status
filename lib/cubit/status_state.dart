@@ -33,3 +33,19 @@ final class UpdateFieldBackgroundState extends StatusState {
   @override
   List<Object> get props => [color];
 }
+
+final class SaveLocalStatusState extends StatusState {
+  final String message;
+
+  SaveLocalStatusState({required this.message});
+  @override
+  List<Object> get props => [message];
+}
+
+final class LoadLocalStatusState extends StatusState {
+  final String message;
+
+  LoadLocalStatusState({required this.message});
+  @override
+  List<Object> get props => [message];
+}

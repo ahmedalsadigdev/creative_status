@@ -1,3 +1,5 @@
+import 'package:creative_status/data/model/status_text_model.dart';
+import 'package:creative_status/data/services/loacal_status_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -7,8 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import 'package:creative_status/cubit/status_cubit.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:share_plus/share_plus.dart';
 part 'status_state.dart';
@@ -60,5 +60,30 @@ class StatusCubit extends Cubit<StatusState> {
           : FontWeight.bold,
     );
     emit(UpdateStatusState(currentTextStyle: currentTextStyle));
+  }
+
+  Future<void> saveLoaclTextStatus() async {
+    final statusTextModel = StatusTextModel(
+        text: controller.text,
+        fillColor: fillColor,
+        textAlign: textAlign,
+        textDirection: textDirection,
+        textStyle: currentTextStyle);
+
+    await LoacalStatusData.saveData(statusTextModel);
+    emit(SaveLocalStatusState(message: "Data saved successfully"));
+  }
+
+  void loadLoaclTextStatus() async {
+    final statusTextModel = await LoacalStatusData.loadData();
+    if (statusTextModel != null) {
+      controller.text = statusTextModel.text;
+      fillColor = statusTextModel.fillColor;
+      textAlign = statusTextModel.textAlign;
+      textDirection = statusTextModel.textDirection;
+      currentTextStyle = statusTextModel.textStyle;
+      fontSize = statusTextModel.textStyle.fontSize ?? 16.0;
+      emit(LoadLocalStatusState(message: "Data Loaded successfully"));
+    }
   }
 }
