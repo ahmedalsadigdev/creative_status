@@ -1,16 +1,8 @@
-import 'package:creative_status/data/model/status_text_model.dart';
-import 'package:creative_status/data/services/loacal_status_data.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'dart:ui' as ui;
-import 'package:creative_status/helper/contstants/my_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
-import 'dart:io';
-import 'package:creative_status/cubit/status_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:share_plus/share_plus.dart';
+import '../../data/model/status_text_model.dart';
+import '../../data/services/cache_status_data.dart';
 part 'status_state.dart';
 
 class StatusCubit extends Cubit<StatusState> {

@@ -1,4 +1,4 @@
-import 'package:creative_status/helper/contstants/my_colors.dart';
+import '../contstants/my_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:toastification/toastification.dart';
@@ -41,15 +41,16 @@ void showToastWidget(
       fontSize: 16.0);
 }
 
-void showToastification({
-  required BuildContext context,
-  required String message,
-  AlertState state = AlertState.success,
-}) {
+void showToastification(
+    {required BuildContext context,
+    required String message,
+    AlertState state = AlertState.success,
+    ToastificationStyle toastStyle = ToastificationStyle.flat}) {
   toastification.show(
     context: context, // optional if you use ToastificationWrapper
     title: Text(message),
     icon: AlertStateIcon(state),
+    style: toastStyle,
     showIcon: true, // show or hide the icon
     primaryColor: AlertStateColor(state),
     backgroundColor: Colors.white,

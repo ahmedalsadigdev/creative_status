@@ -1,1 +1,1 @@
-const String SliverAppBarText = "What do you think?";
+const String SliverAppBarTitleText = "What do you think?";

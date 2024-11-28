@@ -1,9 +1,8 @@
-import 'dart:developer';
-import 'package:creative_status/cubit/status_cubit.dart';
-import 'package:creative_status/helper/widgets/snackbar_widget.dart';
+import '../cubit/status_cubit.dart';
+import '../../helper/widgets/alert_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'settingt_text_widget.dart';
+import 'settingt_text_buttons_widget.dart';
 
 class StatusTextWidget extends StatefulWidget {
   StatusTextWidget({
@@ -22,7 +21,7 @@ class _StatusTextWidgetState extends State<StatusTextWidget> {
       padding: const EdgeInsets.all(10),
       child: Column(
         children: [
-          SettingTextWidget(),
+          SettingTextButtonsWidget(),
           SizedBox(height: 20),
           buildTextField(statusCubit),
         ],
@@ -30,6 +29,7 @@ class _StatusTextWidgetState extends State<StatusTextWidget> {
     );
   }
 
+  /// build main text field
   Widget buildTextField(StatusCubit statusCubit) {
     return BlocConsumer<StatusCubit, StatusState>(
       listener: (BuildContext context, StatusState state) {

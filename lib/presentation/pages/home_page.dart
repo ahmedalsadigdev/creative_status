@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../helper/contstants/my_colors.dart';
-import '../helper/contstants/string.dart';
+import '../../helper/contstants/my_colors.dart';
+import '../../helper/contstants/string.dart';
 import '../widgets/status_text_widget.dart';
 import '../widgets/text_to_image_widget.dart';
 
@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Text(SliverAppBarText,
+            Text(SliverAppBarTitleText,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                     color: Colors.black54, fontWeight: FontWeight.bold)),
@@ -43,12 +43,7 @@ class HomePage extends StatelessWidget {
                 backgroundColor: Colors.white,
                 foregroundColor: MyColors.buttonColor,
                 shape: CircleBorder(),
-                onPressed: () async {
-                  await showDialog(
-                      useSafeArea: true,
-                      context: context,
-                      builder: (_) => TextToImageWidget());
-                },
+                onPressed: () => showTextToImageDialog(context),
                 child: Icon(Icons.share),
               ),
             ),
@@ -61,6 +56,14 @@ class HomePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+// this function shows Dialog for converting text to image
+  void showTextToImageDialog(BuildContext context) async {
+    await showDialog(
+        useSafeArea: true,
+        context: context,
+        builder: (_) => TextToImageWidget());
   }
 
   Widget buildSliverList() {

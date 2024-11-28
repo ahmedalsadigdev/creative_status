@@ -1,15 +1,13 @@
-import 'dart:developer';
-
-import 'package:creative_status/cubit/status_cubit.dart';
-import 'package:creative_status/helper/contstants/my_colors.dart';
-import 'package:creative_status/widgets/color_picker_widget.dart';
+import '../cubit/status_cubit.dart';
+import '../../helper/contstants/my_colors.dart';
+import 'color_picker_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'align_button_widget.dart';
+import 'align_text_button_widget.dart';
 
-class SettingTextWidget extends StatelessWidget {
-  const SettingTextWidget({
+class SettingTextButtonsWidget extends StatelessWidget {
+  const SettingTextButtonsWidget({
     super.key,
   });
 
@@ -46,7 +44,7 @@ class SettingTextWidget extends StatelessWidget {
                   .changeFieldBackgroundColor(color);
             },
           ),
-          AlignButtonWidget(),
+          AlignTextButtonsWidget(),
           IconButton(
             onPressed: statusCubit.toggleFontWeight,
             icon: Icon(

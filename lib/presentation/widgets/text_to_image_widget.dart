@@ -1,16 +1,16 @@
 import 'dart:developer';
 import 'dart:ui' as ui;
-import 'package:creative_status/helper/contstants/my_colors.dart';
+import '../../helper/contstants/my_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
-import 'package:creative_status/cubit/status_cubit.dart';
+import '../cubit/status_cubit.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:share_plus/share_plus.dart';
 
-import '../helper/widgets/snackbar_widget.dart';
+import '../../helper/widgets/alert_widget.dart';
 
 class TextToImageWidget extends StatefulWidget {
   const TextToImageWidget({
@@ -30,16 +30,17 @@ class _TextToImageWidgetState extends State<TextToImageWidget> {
   @override
   void initState() {
     statusCubit = BlocProvider.of<StatusCubit>(context);
-
     super.initState();
   }
 
+  // share file with other apps
   void shareImage() async {
     await _convertTextToImage();
     await statusCubit.saveLoaclTextStatus();
     Share.shareXFiles([XFile('${file!.path}')], text: null);
   }
 
+  // convert text to image and save it in file
   Future<void> _convertTextToImage() async {
     try {
       setState(() {

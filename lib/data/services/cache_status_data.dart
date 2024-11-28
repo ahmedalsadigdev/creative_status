@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:creative_status/data/model/status_text_model.dart';
+import '../model/status_text_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoacalStatusData {

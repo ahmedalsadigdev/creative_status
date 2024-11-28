@@ -1,9 +1,9 @@
-import 'package:creative_status/cubit/status_cubit.dart';
+import '../cubit/status_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class AlignButtonWidget extends StatelessWidget {
-  const AlignButtonWidget({super.key});
+class AlignTextButtonsWidget extends StatelessWidget {
+  const AlignTextButtonsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
