@@ -1,4 +1,4 @@
-import '../cubit/status_cubit.dart';
+import '../../domain/cubit/status_cubit.dart';
 import '../../helper/contstants/my_colors.dart';
 import 'color_picker_widget.dart';
 import 'package:flutter/material.dart';

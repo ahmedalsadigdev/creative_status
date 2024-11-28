@@ -1,7 +1,8 @@
-import '../contstants/my_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:toastification/toastification.dart';
+
+import '../contstants/my_colors.dart';
 
 enum AlertState {
   success,

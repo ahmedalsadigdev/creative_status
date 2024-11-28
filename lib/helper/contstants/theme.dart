@@ -1,4 +1,4 @@
-import 'package:creative_status/helper/contstants/my_colors.dart';
+import 'my_colors.dart';
 import 'package:flutter/material.dart';
 
 // app theme

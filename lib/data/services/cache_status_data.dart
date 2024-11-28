@@ -1,7 +1,8 @@
 import 'dart:convert';
 
-import '../model/status_text_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../model/status_text_model.dart';
 
 class LoacalStatusData {
   static Future<void> saveData(StatusTextModel textModel) async {

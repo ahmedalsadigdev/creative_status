@@ -1,7 +1,8 @@
-import 'helper/contstants/theme.dart';
-import 'presentation/cubit/status_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'domain/cubit/status_cubit.dart';
+import 'helper/contstants/theme.dart';
 import 'presentation/pages/home_page.dart';
 
 void main() {

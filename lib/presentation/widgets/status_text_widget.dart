@@ -1,4 +1,4 @@
-import '../cubit/status_cubit.dart';
+import '../../domain/cubit/status_cubit.dart';
 import '../../helper/widgets/alert_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
