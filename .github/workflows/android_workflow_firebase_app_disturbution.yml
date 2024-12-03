@@ -22,6 +22,11 @@ jobs:
       uses: subosito/flutter-action@v2
       with:
         channel: stable
+    - name: Adjust Gemfile Platform
+      run: |
+        bundle lock --add-platform x86_64-linux
+        bundle install
+        working-directory: android
 
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
