@@ -1,0 +1,43 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Firebase App Distribution"
+  lane :firebase_ios_distribution do
+  # Build the iOS app
+    build_ios_app(
+      scheme: "Runner",                  # Replace with your app's scheme
+      workspace: "Runner.xcworkspace",   # Your workspace file
+      export_method: "ad-hoc",           # Use "ad-hoc" for Firebase
+      clean: true,
+      output_directory: "./build",       # Directory to save the .ipa
+      output_name: "CreativeStatus.ipa",
+      export_options: {
+        provisioningProfiles: {
+          "com.example.creativeStatus" => "CreativeStatusProfile"
+        }
+      }
+    )
+    firebase_app_distribution(
+      app: "1:941502271883:ios:4284bb37e3dae1ff905f8e",
+      firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
+      ipa_path: "./build/CreativeStatus.ipa",           # Ensure this file exists
+      testers: "a7medlord123@gmail.com, ahmedalsadig.devs@gmail.com",
+      release_notes: "First Fastlane App Distribution For Creative Status App"
+    )
+  end
+end
